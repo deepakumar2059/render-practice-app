@@ -48,7 +48,7 @@ function renderTasks(tasks) {
     checkbox.addEventListener("change", async () => {
       checkbox.disabled = true;
       try {
-        await api(`/api/tasks/${task.id}`, {
+        await api(`https://render-practice-app.onrender.com/api/tasks/${task.id}`, {
           method: "PATCH",
           body: JSON.stringify({ completed: checkbox.checked })
         });
@@ -71,7 +71,7 @@ function renderTasks(tasks) {
     deleteButton.addEventListener("click", async () => {
       deleteButton.disabled = true;
       try {
-        await api(`/api/tasks/${task.id}`, { method: "DELETE" });
+        await api(`https://render-practice-app.onrender.com/api/tasks/${task.id}`, { method: "DELETE" });
         showMessage("");
         await loadTasks();
       } catch (error) {
@@ -86,7 +86,7 @@ function renderTasks(tasks) {
 }
 
 async function loadTasks() {
-  const tasks = await api("/api/tasks");
+  const tasks = await api("https://render-practice-app.onrender.com/api/tasks");
   renderTasks(tasks);
 }
 
@@ -98,7 +98,7 @@ form.addEventListener("submit", async (event) => {
   addButton.disabled = true;
   showMessage("");
   try {
-    await api("/api/tasks", {
+    await api("https://render-practice-app.onrender.com/api/tasks", {
       method: "POST",
       body: JSON.stringify({ title })
     });
@@ -114,7 +114,7 @@ form.addEventListener("submit", async (event) => {
 
 async function startApp() {
   try {
-    await api("/api/health");
+    await api("https://render-practice-app.onrender.com/api/health");
     connectionStatus.textContent = "Server + database connected";
     await loadTasks();
   } catch (error) {
