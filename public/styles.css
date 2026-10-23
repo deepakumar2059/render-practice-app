@@ -1,0 +1,44 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f3f6fb;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+.container { width: min(760px, calc(100% - 32px)); margin: 64px auto 36px; }
+.hero { margin-bottom: 28px; }
+.eyebrow { color: #5266d8; font-size: 12px; font-weight: 800; letter-spacing: .13em; }
+h1 { margin: 10px 0; font-size: clamp(34px, 7vw, 48px); letter-spacing: -.04em; }
+.subtitle { max-width: 590px; color: #667085; line-height: 1.7; }
+.panel { background: white; border: 1px solid #e4e9f2; border-radius: 18px; padding: 28px; box-shadow: 0 12px 36px #18284b0a; }
+label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.input-row { display: flex; gap: 10px; }
+input { flex: 1; min-width: 0; padding: 13px 14px; border: 1px solid #d7deea; border-radius: 10px; font: inherit; outline: none; }
+input:focus { border-color: #5266d8; box-shadow: 0 0 0 3px #5266d81c; }
+button { border: 0; border-radius: 10px; background: #5266d8; color: white; padding: 12px 18px; font: inherit; font-weight: 700; cursor: pointer; }
+button:hover { background: #4053c3; }
+button:disabled { opacity: .55; cursor: wait; }
+.message { min-height: 20px; margin: 10px 0 18px; color: #b42318; font-size: 13px; }
+.list-heading { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #edf0f5; padding-top: 20px; }
+h2 { font-size: 18px; margin: 0; }
+.count { font-size: 12px; color: #667085; background: #f1f3f8; padding: 6px 10px; border-radius: 20px; }
+.task-list { list-style: none; margin: 14px 0 0; padding: 0; }
+.task { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #edf0f5; }
+.task:last-child { border-bottom: 0; }
+.task input[type="checkbox"] { flex: 0 0 auto; width: 17px; height: 17px; accent-color: #5266d8; }
+.task-title { flex: 1; overflow-wrap: anywhere; }
+.task.done .task-title { color: #98a2b3; text-decoration: line-through; }
+.delete-button { background: #fff; color: #b42318; border: 1px solid #f1d3d0; padding: 7px 10px; font-size: 12px; }
+.delete-button:hover { background: #fff3f2; }
+.empty-state { text-align: center; color: #98a2b3; padding: 26px 0 10px; font-size: 14px; }
+footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: #98a2b3; font-size: 12px; padding: 18px 4px; }
+.status { color: #16803d; }
+.status.error { color: #b42318; }
+@media (max-width: 520px) {
+  .container { margin-top: 32px; }
+  .panel { padding: 20px; }
+  .input-row { flex-direction: column; }
+  .input-row button { width: 100%; }
+  footer { flex-direction: column; }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Render Practice Tasks</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">DEPLOYMENT PRACTICE APP</p>
+      <h1>My Task Board</h1>
+      <p class="subtitle">A tiny app to practice deploying a frontend, backend, and PostgreSQL database on Render.</p>
+    </header>
+
+    <section class="panel">
+      <form id="task-form">
+        <label for="task-title">Add a task</label>
+        <div class="input-row">
+          <input id="task-title" name="title" type="text" maxlength="200"
+                 placeholder="e.g. Deploy my first app" required>
+          <button type="submit" id="add-button">Add task</button>
+        </div>
+      </form>
+      <p id="message" class="message" role="status"></p>
+      <div class="list-heading">
+        <h2>Tasks</h2>
+        <span id="task-count" class="count">0 tasks</span>
+      </div>
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-state" class="empty-state">No tasks yet. Add one above.</p>
+    </section>
+
+    <footer>
+      <span id="connection-status" class="status">Checking server…</span>
+      <span>HTML · CSS · JavaScript · Express · PostgreSQL</span>
+    </footer>
+  </main>
+</body>
+</html>
