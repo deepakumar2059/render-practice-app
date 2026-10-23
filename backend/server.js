@@ -1,9 +1,16 @@
 const express = require("express");
 const path = require("path");
 const { Pool } = require("pg");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors({
+  origin:["https://render-practice-app-1.onrender.com"],
+  methods:["GET", "POST","PATCH","DELETE","OPTIONS","PUT"],
+  allowedHeaders:["Content-Type","Authorization"]
+}));
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
